@@ -1,0 +1,60 @@
+<div style="width: 500px;">
+  <sky-tile>
+    <sky-tile-title>
+      Turret Module
+    </sky-tile-title>
+    <sky-tile-content>
+      <form class="sky-form-group"
+        [formGroup]="expansionForm"
+        style="max-width: 650px; margin-left: 5%; margin-right: 5%;">
+        <label class="sky-control-label sky-control-label-required">
+          Photon:
+        </label>
+        <select class="sky-form-control"
+          formControlName="selectedPhoton"
+          id="selectedPhoton"
+          name="selectedPhoton"
+          (change)="selectionChanged()">
+          <option value=""
+            disabled
+            selected>Select a photon's turret to fire!</option>
+          <option *ngFor="let photon of photons"
+            [value]="photon.id">
+            {{ photon.id }}
+          </option>
+        </select>
+        <!-- Turn Turret -->
+        <!-- <label class="sky-control-label sky-control-label-required">
+          Angle:
+        </label>
+        <input type=number
+          min="10"
+          max="180"
+          class="sky-form-control"
+          formControlName="angle"
+          id="angle"
+          name="angle"
+          placeholder="10 - 180"> -->
+        <!-- <sky-radio-group ariaLabelledBy="favorite-season-label-reactive"
+          formControlName="lightStatus">
+          <ul class="sky-list-unstyled">
+            <li *ngFor="let value of lightOptions">
+              <sky-radio [value]="value">
+                <sky-radio-label>
+                  {{ value.name }}
+                </sky-radio-label>
+              </sky-radio>
+            </li>
+          </ul>
+        </sky-radio-group> -->
+        <button class="sky-btn sky-btn-primary"
+          style="margin-top: 5px; margin-bottom: 5px;"
+          [disabled]="expansionForm.invalid"
+          type="button"
+          (click)="save()">
+          Fire
+        </button>
+      </form>
+    </sky-tile-content>
+  </sky-tile>
+</div>

@@ -1,0 +1,52 @@
+<div style="width: 500px;">
+  <sky-tile>
+    <sky-tile-title>
+      Messenger Module
+    </sky-tile-title>
+    <sky-tile-content>
+      <form class="sky-form-group"
+        [formGroup]="messageForm"
+        style="max-width: 650px; margin-left: 5%; margin-right: 5%;">
+        <label class="sky-control-label sky-control-label-required">
+          Photon:
+        </label>
+        <select class="sky-form-control"
+          formControlName="selectedPhoton"
+          id="selectedPhoton"
+          name="selectedPhoton"
+          (change)="selectionChanged()">
+          <option value=""
+            disabled
+            selected>Select a photon to message</option>
+          <option *ngFor="let photon of photons"
+            [value]="photon.id">
+            {{ photon.id }}
+          </option>
+        </select>
+        <br>
+        <label class="sky-control-label sky-control-label-required">
+          Message:
+        </label>
+        <textarea class="sky-form-control"
+          formControlName="message"
+          placeholder="Enter a message"
+          name="message"
+          id="message"
+          maxlength="147">
+        </textarea>
+        <button class="sky-btn sky-btn-primary"
+          style="margin-right: 5px; margin-bottom: 5px;"
+          [disabled]="messageForm.invalid"
+          type="button"
+          (click)="save()">
+          Submit
+        </button>
+        <button class="sky-btn sky-btn-secondary"
+          type="button"
+          (click)="clear()">
+          Clear
+        </button>
+      </form>
+    </sky-tile-content>
+  </sky-tile>
+</div>

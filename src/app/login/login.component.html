@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm"
+  style="max-width: 650px; margin-left: 5%">
+  <label for="username"
+    class="sky-control-label">
+    Username:
+  </label>
+  <input class="sky-form-control"
+    formControlName="username"
+    name="username"
+    id="username"
+    type="text"
+    placeholder="Particle Login Name">
+
+  <label for="password"
+    class="sky-control-label">
+    Password:
+  </label>
+  <input class="sky-form-control"
+    formControlName="password"
+    name="password"
+    id="password"
+    type="password"
+    placeholder="Password">
+  <button class="sky-btn sky-btn-primary"
+    [disabled]="loginForm.invalid"
+    type="button"
+    (click)="save()">
+    Submit
+  </button>
+</form>
