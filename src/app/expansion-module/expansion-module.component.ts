@@ -46,16 +46,16 @@ export class ExpansionModuleComponent implements OnInit {
     });
     this.expansionForm = this.formBuilder.group({
       selectedPhoton: ['', Validators.required],
-      // angle: ['', [Validators.required, Validators.min(10), Validators.max(180)]],
+      angle: ['', [Validators.required, Validators.min(1), Validators.max(260)]],
       lightStatus: []
     });
   }
 
   public save() {
-    // this._data.setAngle(this.selectedPhoton,
-    //   this.expansionForm.value.angle).subscribe(() => { });
+    this._data.setAngle(this.selectedPhoton,
+      this.expansionForm.value.angle).subscribe(() => { });
 
-    this._data.setTurretLights(this.selectedPhoton, true).subscribe(() => { });
+    // this._data.setTurretLights(this.selectedPhoton, true).subscribe(() => { });
   }
 
   public selectionChanged() {

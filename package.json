@@ -1,7 +1,7 @@
 {
-  "name": "blackbaud-skyux-spa-otg-messenger",
+  "name": "blackbaud-skyux-spa-makerspace-demo-bot",
   "version": "0.0.1",
-  "description": "Single-page-application (SPA) for skyux-spa-otg-messenger",
+  "description": "Single-page-application (SPA) for skyux-spa-makerspace-demo-bot",
   "main": "index.js",
   "scripts": {
     "build": "skyux build",
